@@ -1,6 +1,6 @@
 galaxy_info:
   author: Paulius Mazeika
-  description: Installs HPE MCP
+  description: Installs HPE MCP and SPP
   license: BSD
   min_ansible_version: 2.7
   role_name: hpe-mcp
@@ -12,7 +12,13 @@ galaxy_info:
         - 8
 
   galaxy_tags:
+    - centos
+    - hp
     - hpe
+    - management component pack
     - mcp
+    - rhel
+    - spp
+    - support pack for proliant
 
 dependencies: []

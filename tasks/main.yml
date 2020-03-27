@@ -1,0 +1,31 @@
+---
+
+- name: Source OS vars
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+  tags: init
+
+- name: Import HPE MCP repo key
+  command: "rpm --import {{ hpe_mcp_repokey }}"
+  changed_when: false
+  tags: repokey
+
+- name: Add HPE MCP repo
+  yum_repository:
+    name: HPE-MCP
+    description: HPE Management Component Pack
+    baseurl: "{{ hpe_mcp_url }}"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://downloads.linux.hpe.com/SDR/repo/mcp/GPG-KEY-mcp
+  tags: repo
+
+- name: Install MCP packages
+  package:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ hpe_mcp_packages }}"
+  tags: packages

@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Paulius Mazeika
+  description: Installs HPE MCP
+  license: BSD
+  min_ansible_version: 2.7
+  role_name: hpe-mcp
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+
+  galaxy_tags:
+    - hpe
+    - mcp
+
+dependencies: []

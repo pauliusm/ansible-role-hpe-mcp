@@ -1,0 +1,2 @@
+[localhost]
+ansible-role-hpe-mcp ansible_connection=docker

@@ -30,3 +30,7 @@
   with_items:
     - "{{ hpe_mcp_packages }}"
   tags: packages
+
+- name: SPP
+  include_tasks: "spp.yml"
+  when: hpe_mcp_spp_packages|length>0

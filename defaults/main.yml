@@ -3,3 +3,5 @@
 hpe_mcp_packages:
   - hponcfg
   - ssacli
+
+hpe_mcp_spp_packages:

@@ -1,0 +1,29 @@
+---
+
+- name: Get Proliant generation
+  set_fact:
+    generation: "{{ ansible_product_name.split(' ')[2] | lower }}"
+
+- name: Check if supported OS/platform
+  set_fact:
+    unsupported_platform: generation <= 8 and ansible_distribution_major_version >= 8
+
+- name: Add HPE SPP repo
+  yum_repository:
+    name: spp
+    description: Service Pack for ProLiant
+    baseurl: "{{ hpe_mcp_spp_url }}"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: "http://downloads.linux.hpe.com/repo/spp-{{ generation }}/GPG-KEY-ServicePackforProLiant"
+  tags: spp_repo
+  when: not unsupported_platform
+
+- name: Install SPP packages
+  package:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ hpe_mcp_spp_packages }}"
+  tags: spp_packages
+  when: not unsupported_platform

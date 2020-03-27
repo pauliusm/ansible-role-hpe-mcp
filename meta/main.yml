@@ -15,10 +15,9 @@ galaxy_info:
     - centos
     - hp
     - hpe
-    - management component pack
     - mcp
+    - proliant
     - rhel
     - spp
-    - support pack for proliant
 
 dependencies: []

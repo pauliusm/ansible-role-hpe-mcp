@@ -33,4 +33,4 @@
 
 - name: SPP
   include_tasks: "spp.yml"
-  when: hpe_mcp_spp_packages|length>0
+  when: hpe_mcp_spp_packages and hpe_mcp_spp_packages|length>0

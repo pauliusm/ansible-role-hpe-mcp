@@ -8,8 +8,9 @@
   tags: init
 
 - name: Import HPE MCP repo key
-  command: "rpm --import {{ hpe_mcp_repokey }}"
-  changed_when: false
+  rpm_key:
+    state: present
+    key: "{{ hpe_mcp_repokey }}"
   tags: repokey
 
 - name: Add HPE MCP repo

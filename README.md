@@ -32,8 +32,9 @@ Example Playbook
         - role: pauliusm.hpe-mcp
           hpe_mcp_packages:
             - ssacli
+          when: 'ProLiant' in ansible_product_name
 ```
-Installs MCP repo and `ssacli` package.
+Installs MCP repo and `ssacli` package, if `ansible_product_name` contains `Proliant` string.
 
 Testing
 -------

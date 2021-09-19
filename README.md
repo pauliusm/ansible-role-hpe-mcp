@@ -7,7 +7,7 @@ An Ansible role for installing HPE [MCP](https://downloads.linux.hpe.com/SDR/pro
 Requirements
 ------------
 
-CentOS/RHEL 7+ system.
+CentOS/RHEL/Rocky 7+ system.
 
 Role Variables
 --------------

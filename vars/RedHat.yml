@@ -1,6 +1,9 @@
 ---
 
-hpe_mcp_repokey: 'https://downloads.linux.hpe.com/SDR/repo/mcp/hpPublicKey2048_key1.pub'
+hpe_mcp_repokeys:
+  - https://downloads.linux.hpe.com/SDR/hpPublicKey2048.pub
+  - https://downloads.linux.hpe.com/SDR/hpPublicKey2048_key1.pub
+  - https://downloads.linux.hpe.com/SDR/hpePublicKey2048_key1.pub
 hpe_mcp_url: "http://downloads.linux.hpe.com/repo/mcp/centos/{{ ansible_distribution_major_version }}/$basearch/current/"
 
 hpe_mcp_spp_url: "http://downloads.linux.hpe.com/repo/spp-{{ generation }}/RHEL/{{ ansible_distribution_major_version }}/$basearch/current/"

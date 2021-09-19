@@ -1,4 +1,4 @@
-Ansible role `hpe-mcp`
+Ansible role `hpe_mcp`
 =========
 
 An Ansible role for installing HPE [MCP](https://downloads.linux.hpe.com/SDR/project/mcp/) and
@@ -35,7 +35,7 @@ Example Playbook
 ```
     - hosts: all
       roles:
-        - role: pauliusm.hpe-mcp
+        - role: pauliusm.hpe_mcp
           hpe_mcp_packages:
             - ssacli
           hpe_mcp_spp_packages:

@@ -3,7 +3,8 @@ galaxy_info:
   description: Installs HPE MCP and SPP
   license: BSD
   min_ansible_version: 2.7
-  role_name: hpe-mcp
+  role_name: hpe_mcp
+  namespace: pauliusm
 
   platforms:
     - name: EL

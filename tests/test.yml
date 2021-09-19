@@ -1,4 +1,4 @@
 ---
 - hosts: all
   roles:
-    - ansible-role-hpe-mcp
+    - ansible-role-hpe_mcp

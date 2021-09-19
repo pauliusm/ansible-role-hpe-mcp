@@ -7,11 +7,13 @@
     - "{{ ansible_os_family }}.yml"
   tags: init
 
-- name: Import HPE MCP repo key
+- name: Import HPE MCP repo keys
   rpm_key:
     state: present
-    key: "{{ hpe_mcp_repokey }}"
-  tags: repokey
+    key: "{{ item }}"
+  with_items:
+    - "{{ hpe_mcp_repokeys }}"
+  tags: repokeys
 
 - name: Add HPE MCP repo
   yum_repository:
